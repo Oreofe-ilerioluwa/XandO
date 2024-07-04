@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X and O</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><b style="color: #4169E1; font-size: 1.5em;">X</b> AND <b style="color: #FF1493; font-size: 1.5em;">O</b></h1>
+      <h3>By <i style="color: #FF1493;">Cypher </i><i style="color: #4169E1;">Ilerioluwa</i></h3>
+        <div id="current-turn">Current Turn: <span id="turn-indicator">X</span></div>
+        <div id="game-board"></div>
+        <button id="resetBtn">Reset Game</button>
+        <div id="message"></div>
+    </div>
+
+    <!-- Result Popup -->
+    <div id="resultPopup" class="popup">
+        <div class="popup-content">
+            <p id="resultMessage" style="font-size: 1.5em;"></p>
+            <button id="newGameBtn">New Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

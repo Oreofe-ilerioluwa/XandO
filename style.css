@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #FF85A2, #4169E1);
+    padding: 10px;
+}
+
+.container {
+    text-align: center;
+    background-color: transparent; /* No background color for the container */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px 0;
+    background: linear-gradient(135deg, #FF85A2, #4169E1); /* Gradient background */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 100%;
+    padding-top: 100%; /* Aspect ratio 1:1 */
+    background-color: white; /* White background for the cells */
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cell::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center align X and O */
+    font-size: 2rem;
+    color: black; /* Black color for X and O */
+    font-weight: bold; /* Bold font weight */
+}
+
+.cell.x::after {
+    content: 'X'; /* Content for X */
+    color: #4169E1; /* Pink color for X */
+}
+
+.cell.o::after {
+    content: 'O'; /* Content for O */
+    color: #FF1493; /* Royal blue color for O */
+}
+
+.cell.x {
+    background-color: yellow; /* Yellow background for X */
+}
+
+.cell.o {
+    background-color: blue; /* Blue background for O */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #FF1493;
+    color: yellow;
+    border: none;
+    border-radius: 5px;
+}
+
+#message, #current-turn {
+    margin-top: 20px;
+    font-size: 25px;
+    color: #fff; /* Text color in container */
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background: linear-gradient(135deg, #FF85A2, #4169E1);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
